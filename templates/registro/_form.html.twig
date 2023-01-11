@@ -1,0 +1,276 @@
+{{ form_start(form) }}
+<div class="container">
+    <div class="alert alert-light " role="alert">
+        <h4 class="alert-heading"><i class="fa-solid fa-triangle-exclamation"></i> Importante</h4>
+        <ul>
+            <li><p>Se enviará un correo al profesor que te recomienda para solicitarle que nos proporcione tu carta de recomendación,
+                    por lo que debes asegurarte de escribir correctamente su dirección de correo.</p></li>
+            <li><p>Al finalizar el envío de este formulario debes de visualizar una pantalla de confirmación. Además, recibirás un correo
+                    electrónico a la cuenta que proporcionaste, de no ser así favor de revisar tu carpeta de correos no deseados o comunicarte
+                    al correo <mark>webmaster<i class="fa-solid fa-at"></i>matmor.unam.mx</mark> para asegurarte que hayamos recibido tu solicitud.</p></li>
+        </ul>
+        <hr>
+        <p class="mb-0">
+            <i class="fa-solid fa-calendar"></i> Fecha límite para realizar tu registro: <mark>20 de marzo de 2023</mark>.
+        </p>
+    </div>
+    <p class="h4">Datos personales</p>
+
+    <div class="row pt-2">
+
+        <div class="col col-md-4 col-sm-12">
+
+            {{ form_row(form.nombre, {
+                label: 'Nombre',
+                attr: {
+                    placeholder: 'Nombre'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.paterno, {
+                label: 'Apellido paterno',
+                attr: {
+                    placeholder: 'Apellido paterno'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.materno, {
+                label: 'Apellido materno',
+                attr: {
+                    placeholder: 'Name'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.sexo, {
+                label: 'Sexo',
+                attr: {
+                    placeholder: 'Sexo'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.nacimiento, {
+                label: 'Fecha de Nacimiento',
+                attr: {
+                    placeholder: 'Fecha de nacimiento'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.mail, {
+                label: 'Correo electrónico',
+                attr: {
+                    placeholder: 'Correo'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+    </div>
+
+    <hr>
+    <p class="h4">Datos académicos</p>
+
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.procedencia, {
+                label: 'Universidad de procedencia',
+                attr: {
+                    placeholder: 'Universidad de Procedencia'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.carrera, {
+                label: 'Carrera',
+                attr: {
+                    placeholder: 'Carrera'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.semestre, {
+                label: 'Semestre o cuatrimestre',
+                attr: {
+                    placeholder: 'Semestre'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+
+        </div>
+    </div>
+
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.porcentaje, {
+                label: 'Porcentaje de avance (hasta marzo 2023)',
+                attr: {
+                    placeholder: 'Porcentaje de avance (hasta marzo 2023)'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.promedio, {
+                label: 'Promedio',
+                attr: {
+                    placeholder: 'Promedio'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+
+
+        </div>
+
+
+    </div>
+    <div class="row pt-2">
+
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.profesor, {
+                label: 'Profesor(a) que recomienda su participación',
+                attr: {
+                    placeholder: 'Profesor(a) que recomienda su participación'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.univprofesor, {
+                label: 'Universidad del profesor o profesora',
+                attr: {
+                    placeholder: 'Universidad del profesor'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.mailprofesor, {
+                label: 'Correo del profesor o profesora',
+                attr: {
+                    placeholder: 'Correo del profesor o profesora'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+
+        </div>
+
+    </div>
+    <hr>
+    <p class="h4">{{ evento }}</p>
+
+    <div class="row pt-2">
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.beca, {
+                label: 'Beca',
+                attr: {
+                    placeholder: 'Beca'
+                },
+                row_attr: {
+                    class: 'form-floating'
+                }
+            }) }}
+
+        </div>
+        <div class="col col-md-4 col-sm-12">
+            {{ form_row(form.vegetariano, {
+                label: '¿Deseas comida vegetariana?',
+                attr: {
+                    placeholder: 'Beca',
+                },
+                label_attr: {
+                    class: 'checkbox-switch'
+                }
+            }) }}
+        </div>
+        <div class="col col-md-4 col-sm-4" id="div_registro_vegetariano">
+            {{ form_row(form.vegecomentario, {
+                label: 'Indicaciones adicionales',
+                attr: {
+                    placeholder: 'Indicaciones adicionales',
+                },
+                row_attr: {
+                    class: 'form-floating',
+                    id: 'registro_vegetariano',
+
+                }
+            }) }}
+
+        </div>
+        <div class="col col-md-4 col-sm-12" id="div2_registro_vegetariano">
+
+
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col col-md-12">
+
+            {{ form_row(form.razones, {
+                label: 'Razones por las que desea asistir',
+                attr: {
+                    placeholder: 'Razones por las que desa asistir',
+                },
+                row_attr: {
+                    class: 'form-floating',
+
+                }
+            }) }}
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 pt-3 mb-2 col-3 mx-auto">
+        <button class="btn btn-dark"><h5> <i class="fa-regular fa-paper-plane"></i> {{ button_label|default('Enviar') }}</h5></button>
+    </div>
+</div>
+
+
+
+
+
+
+{{ form_widget(form) }}
+
+
+{{ form_end(form) }}

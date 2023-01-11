@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+    <h1>Registro</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ registro.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ registro.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Paterno</th>
+                <td>{{ registro.paterno }}</td>
+            </tr>
+            <tr>
+                <th>Materno</th>
+                <td>{{ registro.materno }}</td>
+            </tr>
+            <tr>
+                <th>Sexo</th>
+                <td>{{ registro.sexo }}</td>
+            </tr>
+            <tr>
+                <th>Nacimiento</th>
+                <td>{{ registro.nacimiento ? registro.nacimiento|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ registro.mail }}</td>
+            </tr>
+            <tr>
+                <th>Procedencia</th>
+                <td>{{ registro.procedencia }}</td>
+            </tr>
+            <tr>
+                <th>Carrera</th>
+                <td>{{ registro.carrera }}</td>
+            </tr>
+            <tr>
+                <th>Semestre</th>
+                <td>{{ registro.semestre }}</td>
+            </tr>
+            <tr>
+                <th>Porcentaje</th>
+                <td>{{ registro.porcentaje }}</td>
+            </tr>
+            <tr>
+                <th>Profesor</th>
+                <td>{{ registro.profesor }}</td>
+            </tr>
+            <tr>
+                <th>Promedio</th>
+                <td>{{ registro.promedio }}</td>
+            </tr>
+            <tr>
+                <th>Univprofesor</th>
+                <td>{{ registro.univprofesor }}</td>
+            </tr>
+            <tr>
+                <th>Mailprofesor</th>
+                <td>{{ registro.mailprofesor }}</td>
+            </tr>
+            <tr>
+                <th>Confirmado</th>
+                <td>{{ registro.confirmado ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Vegetariano</th>
+                <td>{{ registro.vegetariano ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Beca</th>
+                <td>{{ registro.beca }}</td>
+            </tr>
+            <tr>
+                <th>Aceptado</th>
+                <td>{{ registro.aceptado ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Razones</th>
+                <td>{{ registro.razones }}</td>
+            </tr>
+            <tr>
+                <th>Comentarios</th>
+                <td>{{ registro.comentarios }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_registro_index') }}">back to list</a>
+
+    <a href="{{ path('app_registro_edit', {'id': registro.id}) }}">edit</a>
+
+    {{ include('registro/_delete_form.html.twig') }}
+{% endblock %}

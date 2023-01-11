@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro index{% endblock %}
+
+{% block body %}
+    <h1>Registro index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Paterno</th>
+                <th>Materno</th>
+                <th>Sexo</th>
+                <th>Nacimiento</th>
+                <th>Mail</th>
+                <th>Procedencia</th>
+                <th>Carrera</th>
+                <th>Semestre</th>
+                <th>Porcentaje</th>
+                <th>Profesor</th>
+                <th>Promedio</th>
+                <th>Univprofesor</th>
+                <th>Mailprofesor</th>
+                <th>Confirmado</th>
+                <th>Vegetariano</th>
+                <th>Vegecomentario</th>
+                <th>Beca</th>
+                <th>Aceptado</th>
+                <th>Razones</th>
+                <th>Comentarios</th>
+                <th>Recomendación</th>
+                <th>Archivo</th>
+
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for registro in registros %}
+            <tr>
+                <td>{{ registro.id }}</td>
+                <td>{{ registro.nombre }}</td>
+                <td>{{ registro.paterno }}</td>
+                <td>{{ registro.materno }}</td>
+                <td>{{ registro.sexo }}</td>
+                <td>{{ registro.nacimiento ? registro.nacimiento|date('Y-m-d') : '' }}</td>
+                <td>{{ registro.mail }}</td>
+                <td>{{ registro.procedencia }}</td>
+                <td>{{ registro.carrera }}</td>
+                <td>{{ registro.semestre }}</td>
+                <td>{{ registro.porcentaje }}</td>
+                <td>{{ registro.profesor }}</td>
+                <td>{{ registro.promedio }}</td>
+                <td>{{ registro.univprofesor }}</td>
+                <td>{{ registro.mailprofesor }}</td>
+                <td>{{ registro.confirmado ? 'Yes' : 'No' }}</td>
+                <td>{{ registro.vegetariano ? 'Yes' : 'No' }}</td>
+                <td>{{ registro.vegecomentario }}</td>
+                <td>{{ registro.beca }}</td>
+                <td>{{ registro.aceptado ? 'Yes' : 'No' }}</td>
+                <td>{{ registro.razones }}</td>
+                <td>{{ registro.comentarios }}</td>
+                <td>{{ registro.recomendacion }}</td>
+                <td><a href="{{ vich_uploader_asset(registro, 'cartaFile') }}"  target="_blank">Carta</a></td>
+
+
+                <td>
+                    <a href="{{ path('app_registro_show', {'id': registro.id}) }}">show</a>
+                    <a href="{{ path('app_registro_edit', {'id': registro.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="22">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_registro_new') }}">Create new</a>
+{% endblock %}
