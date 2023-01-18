@@ -89,6 +89,7 @@ class RegistroType extends AbstractType
                 ],
                 'placeholder' => 'Seleccionar',
             ])
+            ->add('aereo')
             ->add('aceptado')
             ->add('razones', TextareaType::class,array(
                 'label'=>'Razones por las que desa asistir'))

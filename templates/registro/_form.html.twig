@@ -2,7 +2,7 @@
 <div class="container">
     <div class="alert alert-light " role="alert">
         <h4 class="alert-heading"><i class="fa-solid fa-triangle-exclamation"></i> Importante</h4>
-        <ul>
+        <ul class="pt-2">
             <li><p>Se enviará un correo al profesor que te recomienda para solicitarle que nos proporcione tu carta de recomendación,
                     por lo que debes asegurarte de escribir correctamente su dirección de correo.</p></li>
             <li><p>Al finalizar el envío de este formulario debes de visualizar una pantalla de confirmación. Además, recibirás un correo
@@ -52,9 +52,13 @@
                 }
             }) }}
         </div>
+
     </div>
+
     <div class="row pt-2">
-        <div class="col col-md-4 col-sm-12">
+
+        <div class="col col-md-4 col-sm-12  ">
+
             {{ form_row(form.sexo, {
                 label: 'Sexo',
                 attr: {
@@ -64,7 +68,12 @@
                     class: 'form-floating'
                 }
             }) }}
+
+
         </div>
+
+
+
         <div class="col col-md-4 col-sm-12">
             {{ form_row(form.nacimiento, {
                 label: 'Fecha de Nacimiento',
@@ -86,6 +95,9 @@
                     class: 'form-floating'
                 }
             }) }}
+        </div>
+        <div class=" mt-2 col col-md-12 col-sm-12 bg-warning">
+
         </div>
     </div>
 
@@ -227,9 +239,9 @@
         </div>
         <div class="col col-md-4 col-sm-4" id="div_registro_vegetariano">
             {{ form_row(form.vegecomentario, {
-                label: 'Información adicional sobre su alimentación',
+                label: 'Restricciones en su dieta o alergias',
                 attr: {
-                    placeholder: 'Información adicional sobre su alimentación',
+                    placeholder: 'Restricciones en su dieta o alergias',
                 },
                 row_attr: {
                     class: 'form-floating',
@@ -244,6 +256,24 @@
 
         </div>
     </div>
+
+    <div class="row pt-2">
+        <p class="text-secondary">En caso de requerir transpore aéreo favor de indicar el origen del viaje. (Viajes dentro de México, no aplican).</p>
+
+        <div class="col col-md-12">
+            {{ form_row(form.aereo, {
+                label: 'Transporte aéreo (Origen del viaje)',
+                attr: {
+                    placeholder: 'Transporte aéreo (Origen del viaje)',
+                },
+                row_attr: {
+                    class: 'form-floating',
+                }
+            }) }}
+
+        </div>
+    </div>
+
     <div class="row pt-2">
         <div class="col col-md-12">
 

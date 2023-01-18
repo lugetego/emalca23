@@ -136,6 +136,11 @@ class Registro
     private $beca;
 
     /**
+     * @ORM\Column(type="string", length=500, nullable=true)
+     */
+    private $aereo;
+
+    /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $aceptado;
@@ -553,6 +558,23 @@ class Registro
     {
         $this->setModified(new \DateTime());
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAereo()
+    {
+        return $this->aereo;
+    }
+
+    /**
+     * @param mixed $aereo
+     */
+    public function setAereo($aereo): void
+    {
+        $this->aereo = $aereo;
+    }
+
 
 
 }
