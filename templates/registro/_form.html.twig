@@ -17,9 +17,7 @@
     <p class="h4">Datos personales</p>
 
     <div class="row pt-2">
-
         <div class="col col-md-4 col-sm-12">
-
             {{ form_row(form.nombre, {
                 label: 'Nombre',
                 attr: {
@@ -52,13 +50,11 @@
                 }
             }) }}
         </div>
-
     </div>
 
     <div class="row pt-2">
-
+        <p class="text-secondary">La información del campo sexo es requerida con fines de la asignación de habitación ya que es compartida.</p>
         <div class="col col-md-4 col-sm-12  ">
-
             {{ form_row(form.sexo, {
                 label: 'Sexo',
                 attr: {
@@ -68,11 +64,7 @@
                     class: 'form-floating'
                 }
             }) }}
-
-
         </div>
-
-
 
         <div class="col col-md-4 col-sm-12">
             {{ form_row(form.nacimiento, {
@@ -137,7 +129,6 @@
                     class: 'form-floating'
                 }
             }) }}
-
         </div>
     </div>
 
@@ -165,14 +156,9 @@
             }) }}
         </div>
         <div class="col col-md-4 col-sm-12">
-
-
         </div>
-
-
     </div>
     <div class="row pt-2">
-
         <div class="col col-md-4 col-sm-12">
             {{ form_row(form.profesor, {
                 label: 'Profesor(a) que recomienda su participación',
@@ -194,7 +180,6 @@
                     class: 'form-floating'
                 }
             }) }}
-
         </div>
         <div class="col col-md-4 col-sm-12">
             {{ form_row(form.mailprofesor, {
@@ -206,9 +191,7 @@
                     class: 'form-floating'
                 }
             }) }}
-
         </div>
-
     </div>
     <hr>
     <p class="h4">{{ evento }}</p>
@@ -224,7 +207,6 @@
                     class: 'form-floating'
                 }
             }) }}
-
         </div>
         <div class="col col-md-4 col-sm-12">
             {{ form_row(form.vegetariano, {
@@ -246,19 +228,15 @@
                 row_attr: {
                     class: 'form-floating',
                     id: 'registro_vegetariano',
-
                 }
             }) }}
-
         </div>
         <div class="col col-md-4 col-sm-12" id="div2_registro_vegetariano">
-
-
         </div>
     </div>
 
     <div class="row pt-2">
-        <p class="text-secondary">En caso de requerir transpore aéreo favor de indicar el origen del viaje. (Viajes dentro de México, no aplican).</p>
+        <p class="text-secondary">Transporte aéreo para estudiantes de América Latina y del Caribe. En caso de requerir transporte aéreo favor de indicar el origen del viaje. (Viajes dentro de México, no aplican).</p>
 
         <div class="col col-md-12">
             {{ form_row(form.aereo, {
@@ -270,7 +248,6 @@
                     class: 'form-floating',
                 }
             }) }}
-
         </div>
     </div>
 
@@ -284,7 +261,6 @@
                 },
                 row_attr: {
                     class: 'form-floating',
-
                 }
             }) }}
         </div>

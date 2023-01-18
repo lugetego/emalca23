@@ -85,7 +85,6 @@ class RegistroType extends AbstractType
                     'Solamente alimentación' => 'Solamente alimentación',
                     'Solamente hospedaje' => 'Solamente hospedaje',
                     'Hospedaje y alimentación' => 'Hospedaje y alimentación',
-                    'Transporte aéreo, sólo para estudiantes de América Latina y del Caribe (México no entra)'=> 'Transporte aéreo'
                 ],
                 'placeholder' => 'Seleccionar',
             ])
