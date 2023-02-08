@@ -79,7 +79,7 @@
                             {% if registro.comentarios != null %}
                                 <p> {{registro.comentarios}} </p>
                             {% else %}
-                                <span class="badge rounded-pill bg-warning text-dark pb-5">No tiene comentarios</span>
+                                <p>  <span class="badge rounded-pill bg-warning text-dark">No tiene comentarios</span></p>
                             {% endif %}
                             <div {{ stimulus_controller('modal-form', {
                                 formUrl: path('app_registro_evaluacion',{'slug':registro.slug})
