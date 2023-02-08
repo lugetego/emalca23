@@ -79,13 +79,13 @@
                             {% if registro.comentarios != null %}
                                 <p> {{registro.comentarios}} </p>
                             {% else %}
-                                <span class="badge rounded-pill bg-warning text-dark">No tiene comentarios</span>
+                                <span class="badge rounded-pill bg-warning text-dark pb-5">No tiene comentarios</span>
                             {% endif %}
                             <div {{ stimulus_controller('modal-form', {
                                 formUrl: path('app_registro_evaluacion',{'slug':registro.slug})
                             }) }}>
                                 <button
-                                        class="btn btn-primary btn-sm pt-5"
+                                        class="btn btn-primary btn-sm"
                                         data-action="modal-form#openModal"
                                 >Agregar comentarios</button>
                                 {{ include('registro/_modal.html.twig', {
