@@ -37,11 +37,11 @@
                             {{ registro.univprofesor| title }}
                         </p>
                         <p class="card-text">
-                            {% if registro.recomendacion is defined  %}
+                            {% if registro.recomendacion is defined or registro.cartaName is defined %}
                         <p> <em>"{{ registro.recomendacion }}"</em>  </p>
-                        {% endif %}
-                        {% if registro.cartaName is defined %}
-                            <a href="{{ vich_uploader_asset(registro, 'cartaFile') }}"  target="_blank" > <span class="badge rounded-pill bg-primary"><i class="fa-regular fa-file-pdf"></i> Carta de recomendación</span></a>
+                        <a href="{{ vich_uploader_asset(registro, 'cartaFile') }}"  target="_blank" > <span class="badge rounded-pill bg-primary"><i class="fa-regular fa-file-pdf"></i> Carta de recomendación</span></a>
+                        {% else %}
+                            <span class="badge rounded-pill bg-warning text-dark">Sin recomendación</span>
                         {% endif %}
                         </p>
                     </div>
