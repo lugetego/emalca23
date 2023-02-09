@@ -16,6 +16,7 @@
         {% set recomendados = 0 %}
         {% set alimentacion = 0 %}
         {% set hospedaje = 0 %}
+        {% set hospyalim = 0 %}
         {% set transporte = 0 %}
         {% set aceptados = 0 %}
         {% set confirmados = 0 %}
@@ -51,6 +52,11 @@
             {% endif %}
         {% endfor %}
         {% for registro in registros %}
+            {% if registro.beca == 'Hospedaje y alimentación' %}
+                {% set hospyalim = hospyalim + 1 %}
+            {% endif %}
+        {% endfor %}
+        {% for registro in registros %}
             {% if registro.aereo == true %}
                 {% set transporte = transporte + 1 %}
             {% endif %}
@@ -81,6 +87,9 @@
         </button>
         <button type="button" class="btn btn-light mb-5 ">
             Solo hospedaje <span class="badge bg-dark">{{ hospedaje }}</span>
+        </button>
+        <button type="button" class="btn btn-light mb-5 ">
+            Hosp. y alim. <span class="badge bg-dark">{{ hospyalim }}</span>
         </button>
         <button type="button" class="btn btn-light mb-5 ">
             Transporte <span class="badge bg-dark">{{ transporte }}</span>
