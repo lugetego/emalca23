@@ -120,7 +120,7 @@
                     {% for registro in registros %}
                         {{registro.mail}}
                         {% if not loop.last %},{% endif %}
-                        {%if total == 50 %}
+                        {%if total == 50 or total == 100 or total==150 or total == 200 or total == 250%}
                             <hr>
                         {%endif %}
                         {% set total = total + 1 %}
