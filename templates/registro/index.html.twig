@@ -119,21 +119,22 @@
                     {% set total = 0 %}
                     {% for registro in registros %}
                         {{registro.mail}}
+                        {% if total > 50 and total < 100 %}
+                            <br><br>
+                        {%endif%}
+                        {% if total > 100 and total < 150 %}
+                            <br><br>
+                        {%endif%}
+                        {% if total > 150 and total < 200 %}
+                            <br><br>
+                        {%endif%}
+                        {% if total > 200 and total < 250 %}
+                            <br><br>
+                        {%endif%}
                         {% if not loop.last %},{% endif %}
                         {% set total = total + 1 %}
                     {% endfor %}
-                    {% if total > 50 and total < 100 %}
-                        <br><br>
-                    {%endif%}
-                    {% if total > 100 and total < 150 %}
-                        <br><br>
-                    {%endif%}
-                    {% if total > 150 and total < 200 %}
-                        <br><br>
-                    {%endif%}
-                    {% if total > 200 and total < 250 %}
-                        <br><br>
-                    {%endif%}
+
                     <p>
                         <br> {{ total }} correos
                     </p>
