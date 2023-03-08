@@ -146,7 +146,7 @@ class Registro
     private $aceptado;
 
     /**
-     * @ORM\Column(type="string", length=2000)
+     * @ORM\Column(type="string", length=6000)
      */
     private $razones;
 
