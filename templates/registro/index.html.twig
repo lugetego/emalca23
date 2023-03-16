@@ -175,13 +175,15 @@
                 {#                    <td>{{ registro.confirmado ? 'Yes' : 'No' }}</td>#}
                 <td>{{ registro.vegetariano ? 'Yes' : 'No' }}</td>
                 <td>{{ registro.beca }}</td>
-                <td>{% if registro.recomendacion != null or registro.cartaName != null %}
-                        <span class="badge bg-primary"> {{ "Si" }}</span>
+                <td class="text-center">
+                    {% if registro.recomendacion != null or registro.cartaName != null %}
+                        <span class="badge bg-primary center"> {{ "Si" }}</span>
                     {% else %}
-                        <span class="badge bg-secondary"> {{"No"}}</span>
+                        <span class="badge bg-secondary center"> {{"No"}}</span>
                     {% endif %}
                 </td>
-                <td>{% if registro.aceptado == true %}
+                <td class="text-center">
+                    {% if registro.aceptado == true %}
                         <span class="badge bg-primary"> {{ "Si" }}</span>
                     {% else %}
                         <span class="badge bg-secondary"> {{"No"}}</span>
