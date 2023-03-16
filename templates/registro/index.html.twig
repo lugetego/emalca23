@@ -37,7 +37,7 @@
             {% endif %}
         {% endfor %}
         {% for registro in registros %}
-            {% if registro.recomendacion == true or registro.archivo == true%}
+            {% if registro.recomendacion == true or registro.cartaName == true%}
                 {% set recomendados = recomendados + 1 %}
             {% endif %}
         {% endfor %}
@@ -138,51 +138,63 @@
         </div>
     </div>
 
-        <table id="example" class="mt-5 table table-striped" style="width:100%">
-            <thead>
+    <table id="example" class="mt-5 table table-striped" style="width:100%">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Edad (años)</th>
+            <th>Mail</th>
+            <th>Procedencia</th>
+            <th>Carrera</th>
+            <th>Semestre</th>
+            <th>Porcentaje</th>
+            <th>Profesor</th>
+            <th>Promedio</th>
+            {#                <th>Confirmado</th>#}
+            <th>Vegetariano</th>
+            <th>Beca</th>
+            <th>Recomendado</th>
+            <th>Aceptado</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for registro in registros %}
+            {% set edad = date().diff(date(registro.nacimiento)).y %}
             <tr>
-                <th>Nombre</th>
-                <th>Sexo</th>
-                <th>Edad (años)</th>
-                <th>Mail</th>
-                <th>Procedencia</th>
-                <th>Carrera</th>
-                <th>Semestre</th>
-                <th>Porcentaje</th>
-                <th>Profesor</th>
-                <th>Promedio</th>
-                {#                <th>Confirmado</th>#}
-                <th>Vegetariano</th>
-                <th>Beca</th>
-                <th>Aceptado</th>
+                <td><a href="{{ path('app_registro_show', {'slug': registro.slug}) }}">{{ registro.nombre }} {{ registro.paterno }} {{ registro.materno }}</a></td>
+                <td>{{ registro.sexo }}</td>
+                <td class="text-center">{{ edad }}</td>
+                <td>{{ registro.mail }}</td>
+                <td>{{ registro.procedencia }}</td>
+                <td>{{ registro.carrera }}</td>
+                <td>{{ registro.semestre }}</td>
+                <td>{{ registro.porcentaje }}</td>
+                <td>{{ registro.profesor }}</td>
+                <td>{{ registro.promedio }}</td>
+                {#                    <td>{{ registro.confirmado ? 'Yes' : 'No' }}</td>#}
+                <td>{{ registro.vegetariano ? 'Yes' : 'No' }}</td>
+                <td>{{ registro.beca }}</td>
+                <td>{% if registro.recomendacion != null or registro.cartaName != null %}
+                        <span class="badge bg-primary"> {{ "Si" }}</span>
+                    {% else %}
+                        <span class="badge bg-secondary"> {{"No"}}</span>
+                    {% endif %}
+                </td>
+                <td>{% if registro.aceptado == true %}
+                        <span class="badge bg-primary"> {{ "Si" }}</span>
+                    {% else %}
+                        <span class="badge bg-secondary"> {{"No"}}</span>
+                    {% endif %}
+                </td>
             </tr>
-            </thead>
-            <tbody>
-            {% for registro in registros %}
-                {% set edad = date().diff(date(registro.nacimiento)).y %}
-                <tr>
-                    <td><a href="{{ path('app_registro_show', {'slug': registro.slug}) }}">{{ registro.nombre }} {{ registro.paterno }} {{ registro.materno }}</a></td>
-                    <td>{{ registro.sexo }}</td>
-                    <td class="text-center">{{ edad }}</td>
-                    <td>{{ registro.mail }}</td>
-                    <td>{{ registro.procedencia }}</td>
-                    <td>{{ registro.carrera }}</td>
-                    <td>{{ registro.semestre }}</td>
-                    <td>{{ registro.porcentaje }}</td>
-                    <td>{{ registro.profesor }}</td>
-                    <td>{{ registro.promedio }}</td>
-                    {#                    <td>{{ registro.confirmado ? 'Yes' : 'No' }}</td>#}
-                    <td>{{ registro.vegetariano ? 'Yes' : 'No' }}</td>
-                    <td>{{ registro.beca }}</td>
-                    <td>{{ registro.aceptado ? 'Yes' : 'No' }}</td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="22">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        {% else %}
+            <tr>
+                <td colspan="22">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     </div>
 {% endblock %}
 
