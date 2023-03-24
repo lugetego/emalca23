@@ -16,6 +16,9 @@ class EvaluacionType extends AbstractType
     {
         $builder
 
+            ->add('aceptado')
+            ->add('confirmado')
+
             ->add('comentarios', TextareaType::class,array(
                 'required' => false,
                 'label'=>'Comentarios'))

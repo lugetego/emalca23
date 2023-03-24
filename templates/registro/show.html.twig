@@ -61,8 +61,8 @@
                             <em>"{{ registro.razones }}"</em>
                         </p>
                         <p>
-                            {{ registro.confirmado ? '<span class="badge rounded-pill bg-success">Participante confirmado</span>' : '<span class="badge rounded-pill bg-warning text-dark">Participante no confirmado</span>' }}
                             {{ registro.aceptado ? '<span class="badge rounded-pill bg-success">Participante aceptado</span>' : '<span class="badge rounded-pill bg-danger">Participante no aceptado</span>' }}
+                            {{ registro.confirmado ? '<span class="badge rounded-pill bg-success">Participante confirmado</span>' : '<span class="badge rounded-pill bg-warning text-dark">Participante no confirmado</span>' }}
                         </p>
                     </div>
                 </div>
@@ -87,9 +87,9 @@
                                 <button
                                         class="btn btn-primary btn-sm"
                                         data-action="modal-form#openModal"
-                                >Agregar comentarios</button>
+                                >Evaluar registro</button>
                                 {{ include('registro/_modal.html.twig', {
-                                    modalTitle: 'Agregar comentarios',
+                                    modalTitle: 'Evaluar registro',
                                 }) }}
                             </div>
                         </address>
